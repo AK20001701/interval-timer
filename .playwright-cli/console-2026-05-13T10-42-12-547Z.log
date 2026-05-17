@@ -1,0 +1,75 @@
+[     106ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[     152ms] [LOG] [HMR] connected @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  164457ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  164477ms] [LOG] [Fast Refresh] done in 32ms @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  172592ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  172609ms] [LOG] [Fast Refresh] done in 29ms @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  181887ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[  181909ms] [LOG] [Fast Refresh] done in 23ms @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3662056ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 3662158ms] [LOG] [Fast Refresh] done in 170ms @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6735335ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6735353ms] [LOG] [Fast Refresh] done in 30ms @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6749877ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6749932ms] [LOG] [Fast Refresh] done in 26ms @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6765164ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6765194ms] [LOG] [Fast Refresh] done in 18ms @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6774327ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6774359ms] [LOG] [Fast Refresh] done in 15ms @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6786098ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6786160ms] [LOG] [Fast Refresh] done in 24ms @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6799116ms] [ERROR] ./src/lib/presets.ts:51:10
+the name `cleanSec` is defined multiple times
+  49 | };
+  50 |
+> 51 | import { cleanSec } from "./format";
+     |          ^^^^^^^^
+  52 |
+  53 | function migrate(raw: LegacyPreset): IntervalPreset | null {
+  54 |   if (!raw || typeof raw !== "object" || !raw.id) return null;
+
+Ecmascript file had an error
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/presets.ts [Client Component Browser]
+    ./src/components/HomeClient.tsx [Client Component Browser]
+    ./src/components/HomeClient.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/presets.ts [Client Component SSR]
+    ./src/components/HomeClient.tsx [Client Component SSR]
+    ./src/components/HomeClient.tsx [Server Component]
+    ./src/app/page.tsx [Server Component] @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:3318
+[ 6799198ms] [ERROR] ./src/lib/presets.ts:51:10
+the name `cleanSec` is defined multiple times
+  49 | };
+  50 |
+> 51 | import { cleanSec } from "./format";
+     |          ^^^^^^^^
+  52 |
+  53 | function migrate(raw: LegacyPreset): IntervalPreset | null {
+  54 |   if (!raw || typeof raw !== "object" || !raw.id) return null;
+
+Ecmascript file had an error
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/presets.ts [Client Component Browser]
+    ./src/components/HomeClient.tsx [Client Component Browser]
+    ./src/components/HomeClient.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/presets.ts [Client Component SSR]
+    ./src/components/HomeClient.tsx [Client Component SSR]
+    ./src/components/HomeClient.tsx [Server Component]
+    ./src/app/page.tsx [Server Component] @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:3318
+[ 6799247ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6805839ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6805897ms] [LOG] [Fast Refresh] done in 18ms @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6818567ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6818592ms] [LOG] [Fast Refresh] done in 26ms @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6831995ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477
+[ 6832047ms] [LOG] [Fast Refresh] done in 23ms @ http://localhost:3030/_next/static/chunks/node_modules_next_dist_115brz8._.js:2477

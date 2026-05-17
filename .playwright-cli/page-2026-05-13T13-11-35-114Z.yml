@@ -1,0 +1,27 @@
+- generic [active] [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e77] [cursor=pointer]:
+    - img [ref=e78]
+  - alert [ref=e188]
+  - generic [ref=e495]:
+    - banner [ref=e496]:
+      - button "Back" [ref=e497]:
+        - img [ref=e498]
+        - text: Back
+      - generic [ref=e500]:
+        - generic [ref=e501]: Custom 3s · 500ms
+        - generic [ref=e502]: Round 1 / 1
+    - main [ref=e503]:
+      - generic [ref=e504]:
+        - generic:
+          - generic: Phase 1
+          - generic: "3"
+          - generic: 0:04 left
+      - generic [ref=e508]:
+        - generic "Phase 1 · 3s" [ref=e509]:
+          - generic [ref=e510]: Phase 1 · 3s
+        - generic "Phase 2 · 900ms" [ref=e511]:
+          - generic [ref=e512]: Phase 2 · 900ms
+    - contentinfo [ref=e515]:
+      - button "Start" [ref=e516]:
+        - img [ref=e517]
+        - text: Start

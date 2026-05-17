@@ -1,0 +1,63 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - button "Open settings" [ref=e4]:
+        - img [ref=e5]
+        - text: Settings
+    - main [ref=e8]:
+      - generic [ref=e9]:
+        - heading "Presets" [level=2] [ref=e11]
+        - generic [ref=e12]:
+          - button "Slow 7·2 preset Two phases of 7s and 2s. Calm, deliberate rhythm. Duplicate as editable Phase 1 7s Phase 2 2s 1m" [pressed] [ref=e13] [cursor=pointer]:
+            - generic [ref=e14]:
+              - generic [ref=e15]:
+                - generic [ref=e16]:
+                  - heading "Slow 7·2" [level=3] [ref=e18]
+                  - generic [ref=e19]: preset
+                - paragraph [ref=e20]: Two phases of 7s and 2s. Calm, deliberate rhythm.
+              - button "Duplicate as editable" [ref=e22]:
+                - img [ref=e23]
+            - generic [ref=e26]:
+              - generic [ref=e27]:
+                - generic [ref=e28]: Phase 1
+                - generic [ref=e29]: 7s
+              - generic [ref=e30]:
+                - generic [ref=e31]: Phase 2
+                - generic [ref=e32]: 2s
+              - generic [ref=e34]: 1m
+          - button "Quick 1·1 preset Two phases of 1s each. Fast, focusing cadence. Duplicate as editable Phase 1 1s Phase 2 1s 1m" [ref=e35] [cursor=pointer]:
+            - generic [ref=e36]:
+              - generic [ref=e37]:
+                - generic [ref=e38]:
+                  - heading "Quick 1·1" [level=3] [ref=e40]
+                  - generic [ref=e41]: preset
+                - paragraph [ref=e42]: Two phases of 1s each. Fast, focusing cadence.
+              - button "Duplicate as editable" [ref=e44]:
+                - img [ref=e45]
+            - generic [ref=e48]:
+              - generic [ref=e49]:
+                - generic [ref=e50]: Phase 1
+                - generic [ref=e51]: 1s
+              - generic [ref=e52]:
+                - generic [ref=e53]: Phase 2
+                - generic [ref=e54]: 1s
+              - generic [ref=e56]: 1m
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - heading "Your intervals" [level=2] [ref=e59]
+          - button "New" [ref=e60]:
+            - img [ref=e61]
+            - text: New
+        - button "Create your first interval Add as many phases as you like, set durations, pick a color" [ref=e62]:
+          - generic [ref=e63]: Create your first interval
+          - generic [ref=e64]: Add as many phases as you like, set durations, pick a color
+    - generic [ref=e65]:
+      - generic [ref=e66]:
+        - generic [ref=e67]: Selected
+        - generic [ref=e68]: Slow 7·2
+      - button "Start" [ref=e69]:
+        - img [ref=e70]
+        - text: Start
+  - button "Open Next.js Dev Tools" [ref=e77] [cursor=pointer]:
+    - img [ref=e78]
+  - alert [ref=e187]

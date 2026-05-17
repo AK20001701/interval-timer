@@ -1,0 +1,80 @@
+- generic [active] [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e77] [cursor=pointer]:
+    - img [ref=e78]
+  - alert [ref=e188]
+  - generic [ref=e290]:
+    - banner [ref=e291]:
+      - button "Open settings" [ref=e292]:
+        - img [ref=e293]
+        - text: Settings
+    - main [ref=e296]:
+      - generic [ref=e297]:
+        - heading "Presets" [level=2] [ref=e299]
+        - generic [ref=e300]:
+          - button "Slow 7·2 preset Two phases of 7s and 2s. Calm, deliberate rhythm. Duplicate as editable Phase 1 7s Phase 2 2s 1m" [ref=e301] [cursor=pointer]:
+            - generic [ref=e302]:
+              - generic [ref=e303]:
+                - generic [ref=e304]:
+                  - heading "Slow 7·2" [level=3] [ref=e306]
+                  - generic [ref=e307]: preset
+                - paragraph [ref=e308]: Two phases of 7s and 2s. Calm, deliberate rhythm.
+              - button "Duplicate as editable" [ref=e310]:
+                - img [ref=e311]
+            - generic [ref=e314]:
+              - generic [ref=e315]:
+                - generic [ref=e316]: Phase 1
+                - generic [ref=e317]: 7s
+              - generic [ref=e318]:
+                - generic [ref=e319]: Phase 2
+                - generic [ref=e320]: 2s
+              - generic [ref=e322]: 1m
+          - button "Quick 1·1 preset Two phases of 1s each. Fast, focusing cadence. Duplicate as editable Phase 1 1s Phase 2 1s 1m" [ref=e323] [cursor=pointer]:
+            - generic [ref=e324]:
+              - generic [ref=e325]:
+                - generic [ref=e326]:
+                  - heading "Quick 1·1" [level=3] [ref=e328]
+                  - generic [ref=e329]: preset
+                - paragraph [ref=e330]: Two phases of 1s each. Fast, focusing cadence.
+              - button "Duplicate as editable" [ref=e332]:
+                - img [ref=e333]
+            - generic [ref=e336]:
+              - generic [ref=e337]:
+                - generic [ref=e338]: Phase 1
+                - generic [ref=e339]: 1s
+              - generic [ref=e340]:
+                - generic [ref=e341]: Phase 2
+                - generic [ref=e342]: 1s
+              - generic [ref=e344]: 1m
+      - generic [ref=e345]:
+        - generic [ref=e346]:
+          - heading "Your intervals" [level=2] [ref=e347]
+          - button "New" [ref=e348]:
+            - img [ref=e349]
+            - text: New
+        - button "Custom 3s · 500ms 3s · 500ms Edit preset Delete preset Phase 1 3s Phase 2 500ms 2× rounds 7s" [pressed] [ref=e351] [cursor=pointer]:
+          - generic [ref=e352]:
+            - generic [ref=e353]:
+              - heading "Custom 3s · 500ms" [level=3] [ref=e356]
+              - paragraph [ref=e357]: 3s · 500ms
+            - generic [ref=e358]:
+              - button "Edit preset" [ref=e359]:
+                - img [ref=e360]
+              - button "Delete preset" [ref=e362]:
+                - img [ref=e363]
+          - generic [ref=e366]:
+            - generic [ref=e367]:
+              - generic [ref=e368]: Phase 1
+              - generic [ref=e369]: 3s
+            - generic [ref=e370]:
+              - generic [ref=e371]: Phase 2
+              - generic [ref=e372]: 500ms
+            - generic [ref=e373]:
+              - generic "2 rounds" [ref=e374]: 2× rounds
+              - generic [ref=e375]: 7s
+    - generic [ref=e376]:
+      - generic [ref=e377]:
+        - generic [ref=e378]: Selected
+        - generic [ref=e379]: Custom 3s · 500ms
+      - button "Start" [ref=e380]:
+        - img [ref=e381]
+        - text: Start

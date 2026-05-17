@@ -1,0 +1,155 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - button "Open settings" [ref=e4]:
+        - img [ref=e5]
+        - text: Settings
+    - main [ref=e8]:
+      - generic [ref=e9]:
+        - heading "Presets" [level=2] [ref=e11]
+        - generic [ref=e12]:
+          - button "Slow 7·2 preset Two phases of 7s and 2s. Calm, deliberate rhythm. Duplicate as editable Phase 1 7s Phase 2 2s 1m" [pressed] [ref=e13] [cursor=pointer]:
+            - generic [ref=e14]:
+              - generic [ref=e15]:
+                - generic [ref=e16]:
+                  - heading "Slow 7·2" [level=3] [ref=e18]
+                  - generic [ref=e19]: preset
+                - paragraph [ref=e20]: Two phases of 7s and 2s. Calm, deliberate rhythm.
+              - button "Duplicate as editable" [ref=e22]:
+                - img [ref=e23]
+            - generic [ref=e26]:
+              - generic [ref=e27]:
+                - generic [ref=e28]: Phase 1
+                - generic [ref=e29]: 7s
+              - generic [ref=e30]:
+                - generic [ref=e31]: Phase 2
+                - generic [ref=e32]: 2s
+              - generic [ref=e34]: 1m
+          - button "Quick 1·1 preset Two phases of 1s each. Fast, focusing cadence. Duplicate as editable Phase 1 1s Phase 2 1s 1m" [ref=e35] [cursor=pointer]:
+            - generic [ref=e36]:
+              - generic [ref=e37]:
+                - generic [ref=e38]:
+                  - heading "Quick 1·1" [level=3] [ref=e40]
+                  - generic [ref=e41]: preset
+                - paragraph [ref=e42]: Two phases of 1s each. Fast, focusing cadence.
+              - button "Duplicate as editable" [ref=e44]:
+                - img [ref=e45]
+            - generic [ref=e48]:
+              - generic [ref=e49]:
+                - generic [ref=e50]: Phase 1
+                - generic [ref=e51]: 1s
+              - generic [ref=e52]:
+                - generic [ref=e53]: Phase 2
+                - generic [ref=e54]: 1s
+              - generic [ref=e56]: 1m
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - heading "Your intervals" [level=2] [ref=e59]
+          - button "New" [ref=e60]:
+            - img [ref=e61]
+            - text: New
+        - button "Create your first interval Add as many phases as you like, set durations, pick a color" [ref=e62]:
+          - generic [ref=e63]: Create your first interval
+          - generic [ref=e64]: Add as many phases as you like, set durations, pick a color
+    - generic [ref=e65]:
+      - generic [ref=e66]:
+        - generic [ref=e67]: Selected
+        - generic [ref=e68]: Slow 7·2
+      - button "Start" [ref=e69]:
+        - img [ref=e70]
+        - text: Start
+    - generic [ref=e82]:
+      - generic [ref=e83]:
+        - heading "New interval" [level=2] [ref=e84]
+        - button "Close" [ref=e85]:
+          - img [ref=e86]
+      - generic [ref=e89]:
+        - text: Name
+        - textbox "Name" [ref=e90]:
+          - /placeholder: e.g. Box, Tabata, Pomodoro…
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - generic [ref=e93]: Phases
+          - generic [ref=e94]: cycle 8s
+        - generic [ref=e95]:
+          - generic [ref=e96]:
+            - generic [ref=e97]:
+              - generic [ref=e98]:
+                - button "Move up" [disabled] [ref=e99]: ▲
+                - button "Move down" [ref=e100]: ▼
+              - generic [ref=e101]:
+                - textbox "Phase 1" [ref=e102]
+                - generic [ref=e103]:
+                  - button "Decrease" [ref=e104]: −
+                  - textbox [ref=e105]: "4"
+                  - button "Increase" [ref=e106]: +
+                  - generic [ref=e107]: sec
+            - generic [ref=e108]:
+              - generic [ref=e109]:
+                - button "↑Grow" [ref=e110]
+                - button "↓Shrink" [ref=e111]
+                - button "●Hold ●" [ref=e112]
+                - button "○Hold ○" [ref=e113]
+                - button "—Steady" [ref=e114]
+              - button "Remove phase" [ref=e115]:
+                - img [ref=e116]
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - generic [ref=e121]:
+                - button "Move up" [ref=e122]: ▲
+                - button "Move down" [disabled] [ref=e123]: ▼
+              - generic [ref=e124]:
+                - textbox "Phase 2" [ref=e125]
+                - generic [ref=e126]:
+                  - button "Decrease" [ref=e127]: −
+                  - textbox [ref=e128]: "4"
+                  - button "Increase" [ref=e129]: +
+                  - generic [ref=e130]: sec
+            - generic [ref=e131]:
+              - generic [ref=e132]:
+                - button "↑Grow" [ref=e133]
+                - button "↓Shrink" [ref=e134]
+                - button "●Hold ●" [ref=e135]
+                - button "○Hold ○" [ref=e136]
+                - button "—Steady" [ref=e137]
+              - button "Remove phase" [ref=e138]:
+                - img [ref=e139]
+        - button "Add phase" [ref=e142]:
+          - img [ref=e143]
+          - text: Add phase
+      - generic [ref=e144]:
+        - generic [ref=e145]:
+          - generic [ref=e146]: Stop after
+          - radiogroup "Stop condition" [ref=e147]:
+            - radio "Time" [ref=e148]
+            - radio "Rounds" [checked] [active] [ref=e149]
+        - generic [ref=e150]:
+          - generic [ref=e151]: Rounds
+          - generic [ref=e152]: 8 × 8s = 1m 4s
+        - generic [ref=e188]:
+          - button "Decrease rounds" [ref=e189]: −
+          - textbox [ref=e190]: "8"
+          - button "Increase rounds" [ref=e191]: +
+          - generic [ref=e192]: rounds
+        - generic [ref=e169]:
+          - button "3" [ref=e193]
+          - button "5" [ref=e194]
+          - button "8" [ref=e195]
+          - button "10" [ref=e196]
+          - button "12" [ref=e197]
+          - button "20" [ref=e198]
+      - generic [ref=e176]:
+        - text: Color
+        - generic [ref=e177]:
+          - 'button "Accent #a78bfa" [ref=e178]'
+          - 'button "Accent #60a5fa" [ref=e179]'
+          - 'button "Accent #34d399" [ref=e180]'
+          - 'button "Accent #f0abfc" [ref=e181]'
+          - 'button "Accent #fb7185" [ref=e182]'
+          - 'button "Accent #fcd34d" [ref=e183]'
+      - generic [ref=e184]:
+        - button "Cancel" [ref=e185]
+        - button "Create" [ref=e186]
+  - button "Open Next.js Dev Tools" [ref=e77] [cursor=pointer]:
+    - img [ref=e78]
+  - alert [ref=e187]
