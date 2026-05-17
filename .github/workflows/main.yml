@@ -1,0 +1,137 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Opt JS actions onto Node 24 ahead of the June 2026 default flip —
+# silences the Node 20 deprecation warning for actions whose latest
+# major still ships a Node 20 runtime (docker/setup-buildx-action,
+# docker/login-action).
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.message, '[BUILD]') || contains(github.event.head_commit.message, '[DEPLOY]')
+    outputs:
+      version: ${{ steps.version.outputs.new_version }}
+    permissions:
+      contents: write
+    environment:
+      name: production
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Get latest tag and increment version
+        id: version
+        run: |
+          # Get the latest tag matching the pattern X.X.X
+          LATEST_TAG=$(git tag -l | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n1)
+          
+          if [ -z "$LATEST_TAG" ]; then
+            # No tags exist, start with 0.0.1
+            NEW_VERSION="0.0.1"
+          else
+            # Split version into parts
+            IFS='.' read -r MAJOR MINOR PATCH <<< "$LATEST_TAG"
+          
+            # Check commit message for version bump type
+            COMMIT_MSG=$(git log -1 --pretty=%B)
+          
+            if echo "$COMMIT_MSG" | grep -qiE '\[major\]|#major|breaking change'; then
+              # Increment major version, reset minor and patch
+              MAJOR=$((MAJOR + 1))
+              MINOR=0
+              PATCH=0
+            elif echo "$COMMIT_MSG" | grep -qiE '\[minor\]|#minor|feat:|feature:'; then
+              # Increment minor version, reset patch
+              MINOR=$((MINOR + 1))
+              PATCH=0
+            else
+              # Default: increment patch version
+              PATCH=$((PATCH + 1))
+            fi
+          
+            NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+          fi
+          
+          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+          echo "Next version will be: $NEW_VERSION"
+      - name: Create and push new tag
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag ${{ steps.version.outputs.new_version }}
+          git push origin ${{ steps.version.outputs.new_version }}
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: |
+            ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.APP_NAME }}:${{ steps.version.outputs.new_version }}
+            ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.APP_NAME }}:latest
+          cache-from: |
+            type=registry,ref=${{ vars.DOCKERHUB_USERNAME }}/${{ vars.APP_NAME }}:buildcache
+            type=gha
+          cache-to: |
+            type=registry,ref=${{ vars.DOCKERHUB_USERNAME }}/${{ vars.APP_NAME }}:buildcache,mode=max
+            type=gha,mode=max
+          platforms: linux/amd64
+          provenance: false
+
+  update-deploy-config:
+    runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.message, '[DEPLOY]') && needs.build-and-push.result == 'success'
+    needs: [build-and-push]
+    steps:
+      - name: Checkout Config Repo
+        uses: actions/checkout@v5
+        with:
+          repository: AK20001701/wms-server-config
+          token: ${{ secrets.GIT_OPS_TOKEN }}
+      - name: Update Image Tag in Compose File
+        env:
+          NEW_VERSION: ${{ needs.build-and-push.outputs.version }}
+          APP_NAME: ${{ vars.APP_NAME }}
+          DOCKER_USER: ${{ vars.DOCKERHUB_USERNAME }}
+        run: |
+          # Use sed to find the image line and replace the tag
+          # Assuming docker-compose.yml exists in the config repo root
+          sed -i "s|image: ${DOCKER_USER}/${APP_NAME}:.*|image: ${DOCKER_USER}/${APP_NAME}:${NEW_VERSION}|g" docker-compose.yml
+          
+          # Optional: Verify change
+          cat docker-compose.yml
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if [[ -n $(git status -s) ]]; then
+            git add docker-compose.yml
+            git commit -m "Update ${APP_NAME} to version ${{ needs.build-and-push.outputs.version }}"
+            git push origin main
+          else
+            echo "No changes to commit"
+          fi
